@@ -31,6 +31,7 @@ public class ControllerCvs {
         this.modelCvs = modelCvs;
         this.viewCvs.jb_guardar.addActionListener(ac);
         this.viewCvs.jb_limpiar.addActionListener(ac);
+        initComponents();
     }
     
     public void limpiar(){

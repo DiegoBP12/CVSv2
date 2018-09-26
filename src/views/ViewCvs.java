@@ -27,7 +27,7 @@ public class ViewCvs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jp_fondo = new javax.swing.JPanel();
         jl_titulo = new javax.swing.JLabel();
         jl_nombre = new javax.swing.JLabel();
         jl_email = new javax.swing.JLabel();
@@ -38,7 +38,7 @@ public class ViewCvs extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jp_fondo.setBackground(new java.awt.Color(0, 102, 102));
 
         jl_titulo.setFont(new java.awt.Font("Perpetua Titling MT", 1, 14)); // NOI18N
         jl_titulo.setText("Agenda");
@@ -53,16 +53,16 @@ public class ViewCvs extends javax.swing.JFrame {
 
         jb_guardar.setText("Guardar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jp_fondoLayout = new javax.swing.GroupLayout(jp_fondo);
+        jp_fondo.setLayout(jp_fondoLayout);
+        jp_fondoLayout.setHorizontalGroup(
+            jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_fondoLayout.createSequentialGroup()
+                .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_fondoLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jp_fondoLayout.createSequentialGroup()
                                 .addComponent(jb_limpiar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                                 .addComponent(jb_guardar))
@@ -70,14 +70,14 @@ public class ViewCvs extends javax.swing.JFrame {
                             .addComponent(jtf_nombre)
                             .addComponent(jl_email)
                             .addComponent(jtf_email)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jp_fondoLayout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(jl_titulo)))
                 .addGap(84, 97, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jp_fondoLayout.setVerticalGroup(
+            jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_fondoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jl_titulo)
                 .addGap(48, 48, 48)
@@ -89,7 +89,7 @@ public class ViewCvs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_limpiar)
                     .addComponent(jb_guardar))
                 .addContainerGap(62, Short.MAX_VALUE))
@@ -99,11 +99,11 @@ public class ViewCvs extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jp_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jp_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,12 +145,12 @@ public class ViewCvs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_limpiar;
     private javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_nombre;
     private javax.swing.JLabel jl_titulo;
+    private javax.swing.JPanel jp_fondo;
     public javax.swing.JTextField jtf_email;
     public javax.swing.JTextField jtf_nombre;
     // End of variables declaration//GEN-END:variables

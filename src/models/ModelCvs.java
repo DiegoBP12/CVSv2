@@ -10,6 +10,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import views.ViewCvs;
 /**
@@ -20,6 +23,7 @@ public class ModelCvs {
     private String nombre = "";
     private String email = "";
     private String path = "C:\\archivos\\base.csv";
+    boolean bandera = true;
     
     ViewCvs viewCvs;
 
@@ -60,5 +64,25 @@ public class ModelCvs {
                 JOptionPane.showMessageDialog(viewCvs,"Error en I/O operación" + ex.getMessage());
         }
     }
+    /**
+     * Escribe un archivo agregando una nueva linea
+     */
+    public void writeFile(){
+        try{
+                File file = new File(path);
+                FileWriter fileWriter = new FileWriter (file,bandera);
+                try (PrintWriter printWriter  = new PrintWriter(fileWriter)){
+                        ArrayList<String> nuevo = new ArrayList<>();
+                        nuevo.add(nombre);
+                        nuevo.add(",");
+                        nuevo.add(email);
+                        printWriter.println(nuevo);
+                        printWriter.close();
+                        JOptionPane.showMessageDialog(viewCvs,"Se modificó correctamente");
+            }
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(viewCvs,"Error en I/O operación" + ex.getMessage());
+                }
+            }
+    }
 
-}
