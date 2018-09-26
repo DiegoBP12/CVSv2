@@ -17,10 +17,9 @@ import views.ViewCvs;
  * @author Diego
  */
 public class ModelCvs {
-    private String nombre;
-    private String email;
+    private String nombre = "";
+    private String email = "";
     private String path = "C:\\archivos\\base.csv";
-    private String mensaje;
     
     ViewCvs viewCvs;
 
@@ -39,14 +38,7 @@ public class ModelCvs {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
+   
     
     /**
      *  Lee un archivo según la ruta especificada
@@ -57,7 +49,9 @@ public class ModelCvs {
                 String row; 
             try (FileReader file = new FileReader(path); BufferedReader bufferedReader = new BufferedReader(file)){
                 while ((row = bufferedReader.readLine()) != null){    
-                        mensaje = mensaje + row + "\n";
+                    String [] campos = row.split(",");
+                    nombre = campos[0];
+                    email = campos[1]; 
                 }
             } 
         }catch (FileNotFoundException ex) {
