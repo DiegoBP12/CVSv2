@@ -19,7 +19,7 @@ import views.ViewCvs;
 public class ModelCvs {
     private String nombre;
     private String email;
-    private String path = "";
+    private String path = "C:\\archivos\\base.csv";
     private String mensaje;
     
     ViewCvs viewCvs;
