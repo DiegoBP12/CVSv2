@@ -74,7 +74,6 @@ public class ModelCvs {
                 try (PrintWriter printWriter  = new PrintWriter(fileWriter)){
                         ArrayList<String> nuevo = new ArrayList<>();
                         nuevo.add(nombre);
-                        nuevo.add(",");
                         nuevo.add(email);
                         printWriter.println(nuevo);
                         printWriter.close();

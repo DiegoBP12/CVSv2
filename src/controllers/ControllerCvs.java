@@ -22,7 +22,7 @@ public class ControllerCvs {
             if (e.getSource() == viewCvs.jb_limpiar)
                     limpiar();
             else if(e.getSource() == viewCvs.jb_guardar){
-                
+                guardar();
             }
         }
     };
@@ -37,6 +37,12 @@ public class ControllerCvs {
     public void limpiar(){
         viewCvs.jtf_nombre.setText("");
         viewCvs.jtf_email.setText("");
+    }
+    
+    public void guardar(){
+        modelCvs.setNombre(viewCvs.jtf_nombre.getText());
+        modelCvs.setEmail(viewCvs.jtf_email.getText());
+        modelCvs.writeFile();
     }
     
     private void initComponents(){
