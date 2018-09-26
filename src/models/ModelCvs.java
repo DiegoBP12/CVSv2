@@ -75,7 +75,7 @@ public class ModelCvs {
                         ArrayList<String> nuevo = new ArrayList<>();
                         nuevo.add(nombre);
                         nuevo.add(email);
-                        printWriter.println(nuevo);
+                        printWriter.print(nombre + "," + email);
                         printWriter.close();
                         JOptionPane.showMessageDialog(viewCvs,"Se modificó correctamente");
             }
