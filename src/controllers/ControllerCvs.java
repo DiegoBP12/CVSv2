@@ -78,10 +78,12 @@ public class ControllerCvs {
     }
     
     public void siguiente(){
-        
+        modelCvs.siguiente();
+        mostrar();
     }
     public void anterior(){
-        
+        modelCvs.anterior();
+        mostrar();
     }
     
     private void initComponents(){
