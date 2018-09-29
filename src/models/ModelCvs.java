@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import views.ViewCvs;
 /**
@@ -22,6 +23,9 @@ public class ModelCvs {
     private String email = "";
     private String path = "C:\\archivos\\base.csv";
     boolean bandera = true;
+    private int fila = 0;
+    private int posicion = 0;
+    ArrayList <String> agenda = new ArrayList <String>();
     
     ViewCvs viewCvs;
 
@@ -40,10 +44,10 @@ public class ModelCvs {
     public void setEmail(String email) {
         this.email = email;
     }
-   
+    
     
     /**
-     *  Lee un archivo según la ruta especificada
+     *  Metodo para leer un archivo según la ruta especificada y almacenarlo en una lista.
      * 
      */
     public void readFile(){
@@ -51,10 +55,9 @@ public class ModelCvs {
                 String row; 
             try (FileReader file = new FileReader(path); BufferedReader bufferedReader = new BufferedReader(file)){
                 while ((row = bufferedReader.readLine()) != null){    
-                    String [] campos = row.split(",");
-                    nombre = campos[0];
-                    email = campos[1]; 
+                    agenda.add(row);
                 }
+                bufferedReader.close();
             } 
         }catch (FileNotFoundException ex) {
                 JOptionPane.showMessageDialog(viewCvs,"No se econtró el archivo" + ex.getMessage());
@@ -62,8 +65,50 @@ public class ModelCvs {
                 JOptionPane.showMessageDialog(viewCvs,"Error en I/O operación" + ex.getMessage());
         }
     }
+    public void primero(){
+            String lista = agenda.get(fila);
+            String datos [] = lista.split(",");
+            posicion = fila;
+            nombre = datos[0];
+            email = datos[1];
+    }
+    public void anterior(){
+        if (posicion > 0){
+            posicion = posicion -1;
+            String lista = agenda.get(posicion);
+            String datos [] = lista.split(",");
+            nombre = datos[0];
+            email = datos[1];
+        }
+        else{
+             JOptionPane.showMessageDialog(viewCvs, "Primer registro");
+        }
+        
+        
+        
+    }
+    public void siguiente(){
+        if (posicion < (agenda.size()-1)){
+            posicion = posicion + 1;
+            String lista = agenda.get(posicion);
+            String datos [] = lista.split(",");
+            nombre = datos[0];
+            email = datos[1];
+        }
+        else{
+             JOptionPane.showMessageDialog(viewCvs, "Ultimo registro");
+        }
+    }
+    public void ultimo(){
+        int ultimo = (agenda.size()-1);
+        String lista = agenda.get(ultimo);
+        String datos [] = lista.split(",");
+        posicion = ultimo;
+        nombre = datos[0];
+        email = datos[1];
+    }
     /**
-     * Escribe un archivo agregando una nueva linea
+     * Metodo psara escribir dentro del archivo una nueva linea con nuevos datos.
      */
     public void writeFile(){
         try{

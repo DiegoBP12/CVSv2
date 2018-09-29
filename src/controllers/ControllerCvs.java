@@ -23,9 +23,16 @@ public class ControllerCvs {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == viewCvs.jb_limpiar)
                     limpiar();
-            else if(e.getSource() == viewCvs.jb_guardar){
+            else if(e.getSource() == viewCvs.jb_guardar)
                 guardar();
-            }
+            else if(e.getSource() == viewCvs.jb_primero)
+                primero();
+            else if (e.getSource() == viewCvs.jb_anterior)
+                anterior();
+            else if (e.getSource() == viewCvs.jb_siguiente)
+                siguiente();
+            else if (e.getSource() == viewCvs.jb_ultimo)
+                ultimo();
         }
     };
     public ControllerCvs(ViewCvs viewCvs, ModelCvs modelCvs, DataValidation dataValidation) {
@@ -33,26 +40,55 @@ public class ControllerCvs {
         this.modelCvs = modelCvs;
         this.viewCvs.jb_guardar.addActionListener(ac);
         this.viewCvs.jb_limpiar.addActionListener(ac);
+        this.viewCvs.jb_primero.addActionListener(ac);
+        this.viewCvs.jb_siguiente.addActionListener(ac);
+        this.viewCvs.jb_anterior.addActionListener(ac);
+        this.viewCvs.jb_ultimo.addActionListener(ac);
         dataValidation.Sletras(this.viewCvs.jtf_nombre);
         initComponents();
     }
+    public void obtener(){
+        modelCvs.setNombre(viewCvs.jtf_nombre.getText());
+        modelCvs.setEmail(viewCvs.jtf_email.getText());
+    }
     
+    public void mostrar(){
+        viewCvs.jtf_nombre.setText(modelCvs.getNombre());
+        viewCvs.jtf_email.setText(modelCvs.getEmail());
+    }
     public void limpiar(){
         viewCvs.jtf_nombre.setText("");
         viewCvs.jtf_email.setText("");
     }
     
     public void guardar(){
-        modelCvs.setNombre(viewCvs.jtf_nombre.getText());
-        modelCvs.setEmail(viewCvs.jtf_email.getText());
+        obtener();
         modelCvs.writeFile();
+    }
+    
+    public void primero(){
+        modelCvs.primero();
+        mostrar();
+        
+    }
+    
+    public void ultimo(){
+        modelCvs.ultimo();
+        mostrar();
+    }
+    
+    public void siguiente(){
+        
+    }
+    public void anterior(){
+        
     }
     
     private void initComponents(){
         viewCvs.setVisible(true);
         modelCvs.readFile();
-        viewCvs.jtf_nombre.setText(modelCvs.getNombre());
-        viewCvs.jtf_email.setText(modelCvs.getEmail());
+        modelCvs.primero();
+        mostrar();
     }
     
 }
