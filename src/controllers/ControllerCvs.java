@@ -51,6 +51,7 @@ public class ControllerCvs {
         viewCvs.jtf_nombre.setText(modelCvs.getNombre());
         viewCvs.jtf_email.setText(modelCvs.getEmail());
         
+        
     }
     
 }

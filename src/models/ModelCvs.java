@@ -11,8 +11,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 import views.ViewCvs;
 /**
@@ -72,10 +70,7 @@ public class ModelCvs {
                 File file = new File(path);
                 FileWriter fileWriter = new FileWriter (file,bandera);
                 try (PrintWriter printWriter  = new PrintWriter(fileWriter)){
-                        ArrayList<String> nuevo = new ArrayList<>();
-                        nuevo.add(nombre);
-                        nuevo.add(email);
-                        printWriter.print(nombre + "," + email);
+                        printWriter.println(nombre + "," + email);
                         printWriter.close();
                         JOptionPane.showMessageDialog(viewCvs,"Se modificó correctamente");
             }
