@@ -14,6 +14,10 @@ import javax.swing.JTextField;
  * @author Diego
  */
 public class DataValidation {
+    /**
+     * Este método no permite que se ingresen otros caracteres que no sean letras a el JTextField indicado
+     * @param a 
+     */
     @SuppressWarnings("unchecked")
         public void Sletras(JTextField a){
         a.addKeyListener(new KeyAdapter (){

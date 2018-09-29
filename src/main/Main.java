@@ -7,6 +7,7 @@ package main;
 import views.ViewCvs;
 import models.ModelCvs;
 import controllers.ControllerCvs;
+import extras.DataValidation;
 /**
  *
  * @author Diego
@@ -19,7 +20,8 @@ public class Main {
     public static void main(String[] args) {
         ViewCvs viewCvs = new ViewCvs();
         ModelCvs modelCvs = new ModelCvs();
-        ControllerCvs controllerCvs = new ControllerCvs(viewCvs,modelCvs);
+        DataValidation dataValidation = new DataValidation();
+        ControllerCvs controllerCvs = new ControllerCvs(viewCvs,modelCvs,dataValidation);
     }
     
 }

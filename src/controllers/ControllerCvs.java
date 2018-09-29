@@ -9,6 +9,7 @@ import models.ModelCvs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import extras.DataValidation;
 /**
  *
  * @author Diego
@@ -16,6 +17,7 @@ import javax.swing.JOptionPane;
 public class ControllerCvs {
     ViewCvs viewCvs;
     ModelCvs modelCvs;
+    DataValidation dataValidation;
     ActionListener ac = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -26,11 +28,12 @@ public class ControllerCvs {
             }
         }
     };
-    public ControllerCvs(ViewCvs viewCvs, ModelCvs modelCvs) {
+    public ControllerCvs(ViewCvs viewCvs, ModelCvs modelCvs, DataValidation dataValidation) {
         this.viewCvs = viewCvs;
         this.modelCvs = modelCvs;
         this.viewCvs.jb_guardar.addActionListener(ac);
         this.viewCvs.jb_limpiar.addActionListener(ac);
+        dataValidation.Sletras(this.viewCvs.jtf_nombre);
         initComponents();
     }
     
@@ -50,8 +53,6 @@ public class ControllerCvs {
         modelCvs.readFile();
         viewCvs.jtf_nombre.setText(modelCvs.getNombre());
         viewCvs.jtf_email.setText(modelCvs.getEmail());
-        
-        
     }
     
 }
