@@ -35,6 +35,10 @@ public class ViewCvs extends javax.swing.JFrame {
         jtf_email = new javax.swing.JTextField();
         jb_limpiar = new javax.swing.JButton();
         jb_guardar = new javax.swing.JButton();
+        jb_primero = new javax.swing.JButton();
+        jb_anterior = new javax.swing.JButton();
+        jb_siguiente = new javax.swing.JButton();
+        jb_ultimo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +57,14 @@ public class ViewCvs extends javax.swing.JFrame {
 
         jb_guardar.setText("Guardar");
 
+        jb_primero.setText("|<");
+
+        jb_anterior.setText("<<");
+
+        jb_siguiente.setText(">>");
+
+        jb_ultimo.setText(">|");
+
         javax.swing.GroupLayout jp_fondoLayout = new javax.swing.GroupLayout(jp_fondo);
         jp_fondo.setLayout(jp_fondoLayout);
         jp_fondoLayout.setHorizontalGroup(
@@ -60,46 +72,65 @@ public class ViewCvs extends javax.swing.JFrame {
             .addGroup(jp_fondoLayout.createSequentialGroup()
                 .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_fondoLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(27, 27, 27)
                         .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoLayout.createSequentialGroup()
+                                .addComponent(jb_primero)
+                                .addGap(18, 18, 18)
+                                .addComponent(jb_anterior)
+                                .addGap(18, 18, 18)
+                                .addComponent(jb_siguiente)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                                .addComponent(jb_ultimo))
                             .addGroup(jp_fondoLayout.createSequentialGroup()
-                                .addComponent(jb_limpiar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                                .addComponent(jb_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jb_guardar))
                             .addComponent(jl_nombre)
                             .addComponent(jtf_nombre)
                             .addComponent(jl_email)
                             .addComponent(jtf_email)))
                     .addGroup(jp_fondoLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(123, 123, 123)
                         .addComponent(jl_titulo)))
-                .addGap(84, 97, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jp_fondoLayout.setVerticalGroup(
             jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_fondoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jl_titulo)
-                .addGap(48, 48, 48)
-                .addComponent(jl_nombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(jl_email)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_fondoLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jl_nombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(jl_email)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jb_ultimo)
+                            .addComponent(jb_siguiente)
+                            .addComponent(jb_anterior)
+                            .addComponent(jb_primero)))
+                    .addGroup(jp_fondoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jl_titulo)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_limpiar)
-                    .addComponent(jb_guardar))
-                .addContainerGap(62, Short.MAX_VALUE))
+                    .addComponent(jb_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jp_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,8 +176,12 @@ public class ViewCvs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jb_anterior;
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_limpiar;
+    public javax.swing.JButton jb_primero;
+    public javax.swing.JButton jb_siguiente;
+    public javax.swing.JButton jb_ultimo;
     private javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_nombre;
     private javax.swing.JLabel jl_titulo;
